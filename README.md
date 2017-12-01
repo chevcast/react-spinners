@@ -47,6 +47,26 @@ function beginSomeOperation() {
 }
 ```
 
+`@chevtek/react-spinners` contains a singleton instance of `SpinnerService` for your convenience and as you've seen above all you have to do is import and use it. Optionally, you can create your own instance of the `SpinnerService` and pass that to your `Spinner` components instead. This is useful in certain situations such as centralizing all your dependencies to be used for dependency injection.
+
+```jsx
+import { Spinner, SpinnerServie } from '@chevtek/react-spinners';
+
+const yourCustomSpinnerService = new SpinnerService();
+
+...
+
+function SomeDumbComponent() {
+  return (
+    <Spinner name="yourSpinner" spinnerService={yourCustomSpinnerService}>
+      Loading...
+    </Spinner>
+  );
+}
+```
+
+In this way you can declare the spinner service in a centralized location and have greater control over where you store this singleton.
+
 <!-- Here is a [working demo](https://embed.plnkr.co/jgHVBg7nwqThktFwcuHj/). -->
 
 ---
