@@ -1,6 +1,6 @@
 {
   "name": "@chevtek/react-spinners",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy loading spinner component and management service for React apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
