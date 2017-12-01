@@ -1,5 +1,5 @@
 {
-  "name": "@spinners/react",
+  "name": "@chevtek/react-spinners",
   "version": "1.0.0",
   "description": "Easy loading spinner component and management service for React apps.",
   "main": "dist/index.js",
@@ -12,17 +12,18 @@
     "url": "git+ssh://github.com/chevtek/react-spinners.git"
   },
   "keywords": [
-    "angular",
-    "angular2",
-    "angular 2",
-    "angular4",
+    "react",
     "spinners",
     "spinner",
     "loading",
     "loaders"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Alex Ford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chevtek/react-spinners/issues"
+  },
+  "homepage": "https://github.com/chevtek/react-spinners#readme",
   "devDependencies": {
     "@types/react": "^16.0.25",
     "awesome-typescript-loader": "^3.4.1",

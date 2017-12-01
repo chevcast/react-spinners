@@ -1,9 +1,9 @@
 import * as React from "react";
-import { SpinnerService } from './spinner.service';
+import { SpinnerService, spinnerService } from './spinner.service';
 
 export interface ISpinnerProps {
   name: string,
-  spinnerService: SpinnerService
+  spinnerService?: SpinnerService
   group?: string,
   loadingImage?: string,
   show?: boolean,
@@ -14,6 +14,8 @@ export interface ISpinnerState {
 }
 
 export class SpinnerComponent extends React.Component<ISpinnerProps, ISpinnerState> {
+
+  private spinnerService = spinnerService;
 
   set show(show: boolean) {
     this.setState({ show });
@@ -36,11 +38,15 @@ export class SpinnerComponent extends React.Component<ISpinnerProps, ISpinnerSta
       show: this.props.hasOwnProperty('show') ? this.props.show : false
     };
 
-    this.props.spinnerService._register(this);
+    if (this.props.hasOwnProperty('spinnerService')) {
+      this.spinnerService = this.props.spinnerService;
+    }
+
+    this.spinnerService._register(this);
   }
 
   componentWillUnmount() {
-    this.props.spinnerService._unregister(this);
+    this.spinnerService._unregister(this);
   }
 
   render() {

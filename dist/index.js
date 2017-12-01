@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,70 +78,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Spinner_component__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Spinner", function() { return __WEBPACK_IMPORTED_MODULE_0__Spinner_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spinner_service__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SpinnerService", function() { return __WEBPACK_IMPORTED_MODULE_1__spinner_service__["a"]; });
-
-
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-class SpinnerComponent extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-    set show(show) {
-        this.setState({ show });
-    }
-    get show() {
-        return this.state.show;
-    }
-    get name() {
-        return this.props.name;
-    }
-    get group() {
-        return this.props.group;
-    }
-    componentWillMount() {
-        this.state = {
-            show: this.props.hasOwnProperty('show') ? this.props.show : false
-        };
-        this.props.spinnerService._register(this);
-    }
-    componentWillUnmount() {
-        this.props.spinnerService._unregister(this);
-    }
-    render() {
-        if (this.state.show) {
-            const { loadingImage } = this.props;
-            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
-                loadingImage && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("img", { src: loadingImage }),
-                this.props.children));
-        }
-        return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SpinnerComponent;
-
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return spinnerService; });
 class SpinnerService {
     constructor() {
         this.spinnerCache = new Set();
@@ -212,7 +149,83 @@ class SpinnerService {
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = SpinnerService;
 
+const spinnerService = new SpinnerService();
 
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Spinner_component__ = __webpack_require__(2);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Spinner", function() { return __WEBPACK_IMPORTED_MODULE_0__Spinner_component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spinner_service__ = __webpack_require__(0);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SpinnerService", function() { return __WEBPACK_IMPORTED_MODULE_1__spinner_service__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "spinnerService", function() { return __WEBPACK_IMPORTED_MODULE_1__spinner_service__["b"]; });
+
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spinner_service__ = __webpack_require__(0);
+
+
+class SpinnerComponent extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+    constructor() {
+        super(...arguments);
+        this.spinnerService = __WEBPACK_IMPORTED_MODULE_1__spinner_service__["b" /* spinnerService */];
+    }
+    set show(show) {
+        this.setState({ show });
+    }
+    get show() {
+        return this.state.show;
+    }
+    get name() {
+        return this.props.name;
+    }
+    get group() {
+        return this.props.group;
+    }
+    componentWillMount() {
+        this.state = {
+            show: this.props.hasOwnProperty('show') ? this.props.show : false
+        };
+        if (this.props.hasOwnProperty('spinnerService')) {
+            this.spinnerService = this.props.spinnerService;
+        }
+        this.spinnerService._register(this);
+    }
+    componentWillUnmount() {
+        this.spinnerService._unregister(this);
+    }
+    render() {
+        if (this.state.show) {
+            const { loadingImage } = this.props;
+            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
+                loadingImage && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("img", { src: loadingImage }),
+                this.props.children));
+        }
+        return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null);
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = SpinnerComponent;
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
 
 /***/ })
 /******/ ]);

@@ -77,3 +77,6 @@ export class SpinnerService {
     return showing;
   }
 }
+
+const spinnerService = new SpinnerService();
+export { spinnerService }

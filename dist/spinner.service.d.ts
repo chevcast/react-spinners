@@ -13,3 +13,5 @@ export declare class SpinnerService {
     hideAll(): void;
     isShowing(spinnerName: string): boolean | undefined;
 }
+declare const spinnerService: SpinnerService;
+export { spinnerService };
