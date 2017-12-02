@@ -7,6 +7,7 @@ export interface ISpinnerProps {
     group?: string;
     loadingImage?: string;
     show?: boolean;
+    style?: object;
 }
 export interface ISpinnerState {
     show: boolean;

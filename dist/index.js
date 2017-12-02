@@ -210,7 +210,7 @@ class SpinnerComponent extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] 
     render() {
         if (this.state.show) {
             const { loadingImage } = this.props;
-            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
+            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { style: { display: 'inline-block' } },
                 loadingImage && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("img", { src: loadingImage }),
                 this.props.children));
         }
