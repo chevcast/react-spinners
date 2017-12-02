@@ -60,6 +60,6 @@ export class SpinnerComponent extends React.Component<ISpinnerProps, ISpinnerSta
         </div>
       );
     }
-    return <div></div>;
+    return (<div style={{ display: 'inline-block' }}></div>);
   }
 }
