@@ -54,7 +54,7 @@ export class SpinnerComponent extends React.Component<ISpinnerProps, ISpinnerSta
     if (this.state.show) {
       const { loadingImage } = this.props;
       return (
-        <div style={this.props.style}>
+        <div style={{ display: 'inline-block' }}>
           { loadingImage && <img src={loadingImage} /> }
           { this.props.children }
         </div>
