@@ -7,6 +7,7 @@ export interface ISpinnerProps {
   group?: string,
   loadingImage?: string,
   show?: boolean,
+  style?: object
 }
 
 export interface ISpinnerState {
@@ -53,7 +54,7 @@ export class SpinnerComponent extends React.Component<ISpinnerProps, ISpinnerSta
     if (this.state.show) {
       const { loadingImage } = this.props;
       return (
-        <div>
+        <div style={this.props.style}>
           { loadingImage && <img src={loadingImage} /> }
           { this.props.children }
         </div>
