@@ -1,11 +1,12 @@
 
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es5",
     "declaration": true,
     "moduleResolution": "node",
     "declarationDir": "./dist",
-    "jsx": "react"
+    "jsx": "react",
+    "lib": ["es2016"]
   },
   "exclude": [
     "node_modules",

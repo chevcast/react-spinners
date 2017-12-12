@@ -75,127 +75,152 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return spinnerService; });
-class SpinnerService {
-    constructor() {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var SpinnerService = /** @class */ (function () {
+    function SpinnerService() {
         this.spinnerCache = new Set();
     }
-    _register(spinner) {
+    SpinnerService.prototype._register = function (spinner) {
         this.spinnerCache.add(spinner);
-    }
-    _unregister(spinnerToRemove) {
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype._unregister = function (spinnerToRemove) {
+        var _this = this;
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner === spinnerToRemove) {
-                this.spinnerCache.delete(spinner);
+                _this.spinnerCache.delete(spinner);
             }
         });
-    }
-    _unregisterGroup(spinnerGroup) {
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype._unregisterGroup = function (spinnerGroup) {
+        var _this = this;
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner.group === spinnerGroup) {
-                this.spinnerCache.delete(spinner);
+                _this.spinnerCache.delete(spinner);
             }
         });
-    }
-    _unregisterAll() {
+    };
+    SpinnerService.prototype._unregisterAll = function () {
         this.spinnerCache.clear();
-    }
-    show(spinnerName) {
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype.show = function (spinnerName) {
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner.name === spinnerName) {
                 spinner.show = true;
             }
         });
-    }
-    hide(spinnerName) {
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype.hide = function (spinnerName) {
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner.name === spinnerName) {
                 spinner.show = false;
             }
         });
-    }
-    showGroup(spinnerGroup) {
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype.showGroup = function (spinnerGroup) {
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner.group === spinnerGroup) {
                 spinner.show = true;
             }
         });
-    }
-    hideGroup(spinnerGroup) {
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype.hideGroup = function (spinnerGroup) {
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner.group === spinnerGroup) {
                 spinner.show = false;
             }
         });
-    }
-    showAll() {
-        this.spinnerCache.forEach(spinner => spinner.show = true);
-    }
-    hideAll() {
-        this.spinnerCache.forEach(spinner => spinner.show = false);
-    }
-    isShowing(spinnerName) {
-        let showing = undefined;
-        this.spinnerCache.forEach(spinner => {
+    };
+    SpinnerService.prototype.showAll = function () {
+        this.spinnerCache.forEach(function (spinner) { return spinner.show = true; });
+    };
+    SpinnerService.prototype.hideAll = function () {
+        this.spinnerCache.forEach(function (spinner) { return spinner.show = false; });
+    };
+    SpinnerService.prototype.isShowing = function (spinnerName) {
+        var showing = undefined;
+        this.spinnerCache.forEach(function (spinner) {
             if (spinner.name === spinnerName) {
                 showing = spinner.show;
             }
         });
         return showing;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SpinnerService;
-
-const spinnerService = new SpinnerService();
-
+    };
+    return SpinnerService;
+}());
+exports.SpinnerService = SpinnerService;
+var spinnerService = new SpinnerService();
+exports.spinnerService = spinnerService;
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Spinner_component__ = __webpack_require__(2);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Spinner", function() { return __WEBPACK_IMPORTED_MODULE_0__Spinner_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spinner_service__ = __webpack_require__(0);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SpinnerService", function() { return __WEBPACK_IMPORTED_MODULE_1__spinner_service__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "spinnerService", function() { return __WEBPACK_IMPORTED_MODULE_1__spinner_service__["b"]; });
 
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var Spinner_component_1 = __webpack_require__(2);
+exports.Spinner = Spinner_component_1.SpinnerComponent;
+var spinner_service_1 = __webpack_require__(0);
+exports.SpinnerService = spinner_service_1.SpinnerService;
+exports.spinnerService = spinner_service_1.spinnerService;
 
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spinner_service__ = __webpack_require__(0);
 
-
-class SpinnerComponent extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-    constructor() {
-        super(...arguments);
-        this.spinnerService = __WEBPACK_IMPORTED_MODULE_1__spinner_service__["b" /* spinnerService */];
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(3);
+var spinner_service_1 = __webpack_require__(0);
+var SpinnerComponent = /** @class */ (function (_super) {
+    __extends(SpinnerComponent, _super);
+    function SpinnerComponent() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.spinnerService = spinner_service_1.spinnerService;
+        return _this;
     }
-    set show(show) {
-        this.setState({ show });
-    }
-    get show() {
-        return this.state.show;
-    }
-    get name() {
-        return this.props.name;
-    }
-    get group() {
-        return this.props.group;
-    }
-    componentWillMount() {
+    Object.defineProperty(SpinnerComponent.prototype, "show", {
+        get: function () {
+            return this.state.show;
+        },
+        set: function (show) {
+            this.setState({ show: show });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SpinnerComponent.prototype, "name", {
+        get: function () {
+            return this.props.name;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SpinnerComponent.prototype, "group", {
+        get: function () {
+            return this.props.group;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SpinnerComponent.prototype.componentWillMount = function () {
         this.state = {
             show: this.props.hasOwnProperty('show') ? this.props.show : false
         };
@@ -203,22 +228,22 @@ class SpinnerComponent extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] 
             this.spinnerService = this.props.spinnerService;
         }
         this.spinnerService._register(this);
-    }
-    componentWillUnmount() {
+    };
+    SpinnerComponent.prototype.componentWillUnmount = function () {
         this.spinnerService._unregister(this);
-    }
-    render() {
+    };
+    SpinnerComponent.prototype.render = function () {
         if (this.state.show) {
-            const { loadingImage } = this.props;
-            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { style: { display: 'inline-block' } },
-                loadingImage && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("img", { src: loadingImage }),
+            var loadingImage = this.props.loadingImage;
+            return (React.createElement("div", { style: { display: 'inline-block' } },
+                loadingImage && React.createElement("img", { src: loadingImage }),
                 this.props.children));
         }
-        return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null);
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = SpinnerComponent;
-
+        return (React.createElement("div", { style: { display: 'inline-block' } }));
+    };
+    return SpinnerComponent;
+}(React.Component));
+exports.SpinnerComponent = SpinnerComponent;
 
 
 /***/ }),
