@@ -1,15 +1,20 @@
 # @Simply007/react-spinners
+
+[![npm](https://img.shields.io/npm/v/@Simply007/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@Simply007/react-spinners)
+[![npm](https://img.shields.io/npm/dt/@Simply007/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@Simply007/react-spinners)
+[![npm](https://img.shields.io/npm/l/@Simply007/react-spinners?maxAge=1000)](@Simply007/react-spinners)
+
 A library for easily managing loading spinners in complex React applications.
 
-:star: This labrary is basically a clone of [@chevtek/react-spinners](https://github.com/Chevtek/react-spinners) with [this pull request merged](https://github.com/Chevtek/react-spinners/pull/3).
+:star: This library is basically a clone of [@chevtek/react-spinners](https://github.com/Chevtek/react-spinners) with [this pull request merged](https://github.com/Chevtek/react-spinners/pull/3).
 
-### Install
+## Install
 
 > $ npm i @Simply007/react-spinners --save
 
 If you're running npm v8 or higher then `--save` is implied if you don't include it.
 
-### Quick Start
+## Quick Start
 
 First import the `Spinner` component and use it anywhere in your app.
 
@@ -17,7 +22,7 @@ First import the `Spinner` component and use it anywhere in your app.
 // ./src/App.jsx
 
 import * as React from 'react';
-import { Spinner } from '@chevtek/react-spinners';
+import { Spinner } from '@Simply007/react-spinners';
 
 export default class YourComponent extends React.Component {
   ...
@@ -73,11 +78,11 @@ In this way you can declare the spinner service in a centralized location and ha
 
 ---
 
-### Spinner Component
+## Spinner Component
 
 The spinner component gives you several options.
 
-#### name: string
+### name: string
 
 The name attribute is required. It is what you must pass to the service when trying to show/hide that specific spinner.
 
@@ -85,7 +90,7 @@ The name attribute is required. It is what you must pass to the service when try
 <spinner name="mySpinner"></spinner>
 ```
 
-#### group: string
+### group: string
 
 Optionally a group name may be specified so that you can show/hide groups of spinners.
 
@@ -99,7 +104,7 @@ Optionally a group name may be specified so that you can show/hide groups of spi
 this.spinnerService.showGroup('foo');
 ```
 
-#### show: boolean
+### show: boolean
 
 By default all spinners are hidden when first registered. You can set a spinner to be visible by default by setting the `show` property to `true`.
 
@@ -107,7 +112,7 @@ By default all spinners are hidden when first registered. You can set a spinner 
 <spinner name="mySpinner" show={true}></spinner>
 ```
 
-#### loadingImage: string
+### loadingImage: string
 
 Passing in a loading image is the simplest way to create a quick spinner.
 
@@ -117,7 +122,7 @@ Passing in a loading image is the simplest way to create a quick spinner.
 
 If you want to disable the loading image entirely then simply do not specify the `loadingImage` property and an image won't be used. If you don't include the `loadingImage` option then be sure to specify some custom markup within the spinner component itself so it can be used instead.
 
-#### Content Projection
+### Content Projection
 
 If you need more control over the kind of spinner you want to display, beyond just a simple animated image. You are able to supply any custom markup that you need by simply nesting it within the spinner component. Any content will be projeced into the spinner template below the `loadingImage` if one was specified.
 
@@ -131,12 +136,12 @@ Content projection is the most common way to use the `SpinnerComponent` as it al
 
 ---
 
-### Spinner Service
+## Spinner Service
 
 The most common way of interacting with your spinners is via the `spinnerService`. This service can be injected just like any other Angular service. Once you have reference to the service you can take advantage of several methods.
 
 ```javascript
-import { spinnerService } from '@chevtek/react-spinners';
+import { spinnerService } from '@Simply007/react-spinners';
 import * as axios from 'axios'; // replace with your preferred ajax request library
 
 
@@ -154,7 +159,7 @@ function  loadData() {
 }
 ```
 
-#### show(spinnerName: string): void
+### show(spinnerName: string): void
 
 The `show` method allows you to display a specific spinner by name.
 
@@ -166,11 +171,11 @@ The `show` method allows you to display a specific spinner by name.
 spinnerService.show('mySpinner');
 ```
 
-#### hide(spinnerName: string): void
+### hide(spinnerName: string): void
 
 Works exactly like `show` but hides the spinner element.
 
-#### showGroup(groupName: string): void
+### showGroup(groupName: string): void
 
 The `showGroup` method allows you to display all spinners with the same group name.
 
@@ -186,18 +191,18 @@ spinnerService.showGroup('foo');
 
 Spinners 1 and 2 would show but spinner 3 would not since it is not part of group "foo".
 
-#### hideGroup(groupName: string): void
+### hideGroup(groupName: string): void
 
 Works exactly the same as `showGroup` except it hides the spinners instead.
 
-#### showAll: void
+### showAll: void
 
 Hopefully it's obvious that this method will show every single spinner registered with the service. This method is rarely used but is there for parity just in case.
 
-#### hideAll(): void
+### hideAll(): void
 
 The `hideAll` method is identical to `showAll` except it hides every spinner that is registered. This method also isn't used very often but is extremely useful in global error handlers. We all know how much users ***HATE*** frozen spinners, right?
 
-#### isShowing(spinnerName: string): boolean
+### isShowing(spinnerName: string): boolean
 
 The `isShowing` method returns a boolean indicating whether or not the specified spinner is currently showing.

@@ -1,6 +1,6 @@
 {
-  "name": "@chevtek/react-spinners",
-  "version": "1.0.5",
+  "name": "@Simply007/react-spinners",
+  "version": "0.0.1",
   "description": "Easy loading spinner component and management service for React apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/chevtek/react-spinners.git"
+    "url": "https://github.com/Simply007/react-spinners.git"
   },
   "keywords": [
     "react",
@@ -18,12 +18,12 @@
     "loading",
     "loaders"
   ],
-  "author": "Alex Ford",
+  "author": "Ondřej Chrastina <chrastina.ondra@gmail.com> (https://github.com/Simply007)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chevtek/react-spinners/issues"
+    "url": "https://github.com/Simply007/react-spinners/issues"
   },
-  "homepage": "https://github.com/chevtek/react-spinners#readme",
+  "homepage": "https://github.com/Simply007/react-spinners#readme",
   "devDependencies": {
     "@types/react": "^16.0.25",
     "awesome-typescript-loader": "^3.4.1",
@@ -31,6 +31,8 @@
     "react": "^16.2.0",
     "source-map-loader": "^0.2.3",
     "typescript": "^2.6.2",
-    "webpack-build-notifier": "^0.1.18"
+    "webpack": "^4.29.6",
+    "webpack-build-notifier": "^0.1.18",
+    "webpack-cli": "^3.3.0"
   }
 }
