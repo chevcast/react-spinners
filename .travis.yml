@@ -1,0 +1,17 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+# Add additional versions here as appropriate.
+node_js:
+- "stable"
+# Lint errors should trigger a failure.
+script: npm run build
+deploy:
+ provider: npm
+ email: $NPM_EMAIL
+ api_key: $NPM_API_KEY
+ skip_cleanup: true
+ # tag: beta # uncomment for beta release
+ on:
+   tags: true

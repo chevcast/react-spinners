@@ -35,9 +35,9 @@ export class SpinnerComponent extends React.Component<ISpinnerProps, ISpinnerSta
   }
 
   componentWillMount() {
-    this.state = {
+    this.setState({
       show: this.props.hasOwnProperty('show') ? this.props.show : false
-    };
+    });
 
     if (this.props.hasOwnProperty('spinnerService')) {
       this.spinnerService = this.props.spinnerService;
