@@ -1,6 +1,6 @@
 {
-  "name": "@Simply007/react-spinners",
-  "version": "0.0.1",
+  "name": "@simply007org/react-spinners",
+  "version": "0.0.3",
   "description": "Easy loading spinner component and management service for React apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

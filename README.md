@@ -1,10 +1,10 @@
-# @Simply007/react-spinners
+# @simply007org/react-spinners
 
-[![Build Status](https://img.shields.io/travis/Kentico/@Simply007/react-spinners.svg?maxAge=1000)](https://travis-ci.org/Kentico/@Simply007/react-spinners)
+[![Build Status](https://img.shields.io/travis/@Simply007/react-spinners.svg?maxAge=1000)](https://travis-ci.org/@Simply007/react-spinners)
 
-[![npm](https://img.shields.io/npm/v/@Simply007/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@Simply007/react-spinners)
-[![npm](https://img.shields.io/npm/dt/@Simply007/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@Simply007/react-spinners)
-[![npm](https://img.shields.io/npm/l/@Simply007/react-spinners?maxAge=1000)](@Simply007/react-spinners)
+[![npm](https://img.shields.io/npm/v/@simply007org/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@simply007org/react-spinners)
+[![npm](https://img.shields.io/npm/dt/@simply007org/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@simply007org/react-spinners)
+[![npm](https://img.shields.io/npm/l/@simply007org/react-spinners?maxAge=1000)](@simply007org/react-spinners)
 
 A library for easily managing loading spinners in complex React applications.
 
@@ -12,7 +12,7 @@ A library for easily managing loading spinners in complex React applications.
 
 ## Install
 
-> $ npm i @Simply007/react-spinners --save
+> $ npm i @simply007org/react-spinners --save
 
 If you're running npm v8 or higher then `--save` is implied if you don't include it.
 
@@ -24,7 +24,7 @@ First import the `Spinner` component and use it anywhere in your app.
 // ./src/App.jsx
 
 import * as React from 'react';
-import { Spinner } from '@Simply007/react-spinners';
+import { Spinner } from '@simply007org/react-spinners';
 
 export default class YourComponent extends React.Component {
   ...
@@ -46,7 +46,7 @@ Now just import the `spinnerService` wherever you need it.
 ```javascript
 // ./src/services/yourService.js
 
-import { spinnerService } from '@Simply007/react-spinners';
+import { spinnerService } from '@simply007org/react-spinners';
 
 function beginSomeOperation() {
   spinnerService.show('mySpinner');
@@ -59,7 +59,7 @@ function beginSomeOperation() {
 `@Simply/react-spinners` contains a singleton instance of `SpinnerService` for your convenience and as you've seen above all you have to do is import and use it. Optionally, you can create your own instance of the `SpinnerService` and pass that to your `Spinner` components instead. This is useful in certain situations such as centralizing all your dependencies to be used for dependency injection.
 
 ```jsx
-import { Spinner, SpinnerServie } from '@Simply007/react-spinners';
+import { Spinner, SpinnerServie } from '@simply007org/react-spinners';
 
 const yourCustomSpinnerService = new SpinnerService();
 
@@ -143,7 +143,7 @@ Content projection is the most common way to use the `SpinnerComponent` as it al
 The most common way of interacting with your spinners is via the `spinnerService`. This service can be injected just like any other Angular service. Once you have reference to the service you can take advantage of several methods.
 
 ```javascript
-import { spinnerService } from '@Simply007/react-spinners';
+import { spinnerService } from '@simply007org/react-spinners';
 import * as axios from 'axios'; // replace with your preferred ajax request library
 
 
