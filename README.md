@@ -1,9 +1,11 @@
-# @chevtek/react-spinners
+# @Simply007/react-spinners
 A library for easily managing loading spinners in complex React applications.
+
+:star: This labrary is basically a clone of [@chevtek/react-spinners](https://github.com/Chevtek/react-spinners) with [this pull request merged](https://github.com/Chevtek/react-spinners/pull/3).
 
 ### Install
 
-> $ npm i @chevtek/react-spinners --save
+> $ npm i @Simply007/react-spinners --save
 
 If you're running npm v8 or higher then `--save` is implied if you don't include it.
 
@@ -37,7 +39,7 @@ Now just import the `spinnerService` wherever you need it.
 ```javascript
 // ./src/services/yourService.js
 
-import { spinnerService } from '@chevtek/react-spinners';
+import { spinnerService } from '@Simply007/react-spinners';
 
 function beginSomeOperation() {
   spinnerService.show('mySpinner');
@@ -47,10 +49,10 @@ function beginSomeOperation() {
 }
 ```
 
-`@chevtek/react-spinners` contains a singleton instance of `SpinnerService` for your convenience and as you've seen above all you have to do is import and use it. Optionally, you can create your own instance of the `SpinnerService` and pass that to your `Spinner` components instead. This is useful in certain situations such as centralizing all your dependencies to be used for dependency injection.
+`@Simply/react-spinners` contains a singleton instance of `SpinnerService` for your convenience and as you've seen above all you have to do is import and use it. Optionally, you can create your own instance of the `SpinnerService` and pass that to your `Spinner` components instead. This is useful in certain situations such as centralizing all your dependencies to be used for dependency injection.
 
 ```jsx
-import { Spinner, SpinnerServie } from '@chevtek/react-spinners';
+import { Spinner, SpinnerServie } from '@Simply007/react-spinners';
 
 const yourCustomSpinnerService = new SpinnerService();
 
