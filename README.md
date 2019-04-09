@@ -1,5 +1,7 @@
 # @Simply007/react-spinners
 
+[![Build Status](https://img.shields.io/travis/Kentico/@Simply007/react-spinners.svg?maxAge=1000)](https://travis-ci.org/Kentico/@Simply007/react-spinners)
+
 [![npm](https://img.shields.io/npm/v/@Simply007/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@Simply007/react-spinners)
 [![npm](https://img.shields.io/npm/dt/@Simply007/react-spinners.svg?maxAge=1000)](https://www.npmjs.com/package/@Simply007/react-spinners)
 [![npm](https://img.shields.io/npm/l/@Simply007/react-spinners?maxAge=1000)](@Simply007/react-spinners)
